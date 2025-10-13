@@ -1,0 +1,47 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "prisma": "prisma",
+    "prisma:studio:dev": "dotenv -e .env.dev -- prisma studio",
+    "prisma:studio:prod": "dotenv -e .env.prod -- prisma studio",
+    "prisma:generate": "prisma generate",
+    "db:seed": "dotenv -e .env.dev -- prisma db seed",
+    "migrate:dev": "dotenv -e .env.dev -- prisma migrate dev",
+    "migrate:reset": "dotenv -e .env.dev -- prisma migrate reset",
+    "migrate:status:dev": "dotenv -e .env.dev -- prisma migrate status",
+    "migrate:status:prod": "dotenv -e .env.prod -- prisma migrate status",
+    "migrate:deploy": "dotenv -e .env.prod -- prisma migrate deploy",
+    "debug": "dotenv -e .env.dev -- nest start --watch --debug",
+    "dev": "dotenv -e .env.dev -- nest start --watch",
+    "build": "nest build",
+    "start": "dotenv -e .env.prod -- node dist/main"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/swagger": "^11.2.0",
+    "@prisma/client": "^6.17.1",
+    "@scalar/nestjs-api-reference": "^1.0.4",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "dotenv-cli": "^10.0.0",
+    "globals": "^16.0.0",
+    "prisma": "^6.17.1",
+    "source-map-support": "^0.5.21",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3"
+  }
+}

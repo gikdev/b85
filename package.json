@@ -1,0 +1,15 @@
+{
+  "name": "b85.ir",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
