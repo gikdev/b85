@@ -1,7 +1,6 @@
 import {
   Controller,
   Get,
-  Headers,
   HttpStatus,
   Param,
   Redirect,
