@@ -1,7 +1,7 @@
 import { Controller, Get, Header, Version } from "@nestjs/common"
 import { ApiTags } from "@nestjs/swagger"
 import { PrismaService } from "src/prisma/prisma.service"
-import { ApiSummary } from "src/shared/decorators/api-summary.decorator"
+import { ApiSummary } from "src/common/decorators/api-summary.decorator"
 
 @Controller("")
 @ApiTags("Misc.")

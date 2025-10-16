@@ -19,7 +19,7 @@ class Main {
     this.setupDocs(app)
 
     app.setGlobalPrefix("api", {
-      exclude: ["l/:code"],
+      exclude: ["l/:code", "not-found"],
     })
 
     await app.listen(this.APP_PORT)
@@ -53,7 +53,12 @@ class Main {
         },
         customCss: `
           * { 
-            font-family: "JetBrains Mono Regular", "Courier New", monospace !important;
+            font-family: 
+              "JetBrains Mono Regular",
+              "JetBrains Mono Light",
+              "JetBrains Mono",
+              "Courier New",
+              monospace !important;
           }
           
           script,

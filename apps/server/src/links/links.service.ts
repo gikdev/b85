@@ -22,7 +22,7 @@ export class LinksService {
       },
       include: {
         clicks: true,
-      }
+      },
     })
 
     return { link }
@@ -52,7 +52,7 @@ export class LinksService {
   }
 
   async findOneByCodeOrNull(code: string) {
-    const link = await this.prisma.link.findUnique({
+    const link = await this.prisma.link.findFirst({
       where: { shortCode: code },
       include: {
         clicks: true,
