@@ -1,4 +1,3 @@
-using Api.Misc;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +15,7 @@ public class GlobalExceptionHandler : IExceptionHandler {
       problemDetails.Detail = ex.Message;
     }
     else {
-      problemDetails.Title = Constants.ProblemDetailsTitle.Status500InternalServerError;
+      problemDetails.Title = "Internal Server Error";
       problemDetails.Detail = exception.Message;
     }
 
