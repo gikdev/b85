@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { cn } from "tailwind-variants"
+import { tvcn } from "#/lib/utils"
 
 interface TopAppBarProps {
   title: string
@@ -16,10 +16,10 @@ export function TopAppBar({
 }: TopAppBarProps) {
   return (
     <header
-      className={cn(
+      className={tvcn(
         "h-16 p-2 flex items-center justify-between border-b border-tusi-800",
         className,
-      )()}
+      )}
     >
       <div className="size-12">{startingStuff}</div>
       {/* {startingStuff} */}

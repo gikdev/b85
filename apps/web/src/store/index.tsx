@@ -13,9 +13,10 @@ import {
 } from "redux-persist"
 import { PersistGate } from "redux-persist/integration/react"
 import storage from "redux-persist/lib/storage"
-import { namoratabSlice } from "#/routes/apps/namoratab/-store"
-import { nebulaSlice } from "#/routes/apps/nebula/-store"
-import { rakatSlice } from "#/routes/apps/rakat/-store"
+import { loggingDevtoolsSlice } from "#/logging/slice"
+import { namoratabSlice } from "#/pages/apps/namoratab/store"
+import { nebulaSlice } from "#/pages/apps/nebula/store"
+import { rakatSlice } from "#/pages/apps/rakat/store"
 import { workTimerSlice } from "#/routes/apps/work-timer/-store"
 
 const rootReducer = combineReducers({
@@ -25,13 +26,14 @@ const rootReducer = combineReducers({
     rakat: rakatSlice.reducer,
     workTimer: workTimerSlice.reducer,
   }),
+  loggingDevtools: loggingDevtoolsSlice.reducer,
 })
 
 const persistConfig = { key: "root", storage }
 
 const persistedRootReducer = persistReducer(persistConfig, rootReducer)
 
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedRootReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

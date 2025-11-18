@@ -1,7 +1,7 @@
 import type { Icon } from "@phosphor-icons/react"
 import { Link, useLocation } from "@tanstack/react-router"
+import { tvcn } from "#/lib/utils"
 import type { FileRouteTypes } from "#/routeTree.gen"
-import { cn } from "tailwind-variants"
 
 export interface TabItem {
   id: string
@@ -30,7 +30,7 @@ function Tab({ Icon, title, url }: TabProps) {
   const { pathname } = useLocation()
   const isActive = url === pathname
 
-  const styleContainer = cn(
+  const styleContainer = tvcn(
     `
       flex flex-col gap-0 
       flex-1 cursor-pointer
@@ -38,9 +38,9 @@ function Tab({ Icon, title, url }: TabProps) {
       items-center justify-center
     `,
     isActive ? "text-tusi-100" : "",
-  )()
+  )
 
-  const styleText = cn("text-body-sm", isActive ? "font-bold" : "")()
+  const styleText = tvcn("text-body-sm", isActive ? "font-bold" : "")
 
   return (
     <Link to={url} className={styleContainer}>

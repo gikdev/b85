@@ -2,9 +2,9 @@ import "./shared/styles.css"
 import { createRouter, RouterProvider } from "@tanstack/react-router"
 import { StrictMode } from "react"
 import ReactDOM from "react-dom/client"
-import { GeneralError } from "./routes/-general-error"
-import { NotFound } from "./routes/-not-found"
-import { Pending } from "./routes/-pending"
+import { GeneralError } from "./pages/common/general-error"
+import { NotFound } from "./pages/common/not-found"
+import { Pending } from "./pages/common/pending"
 import { routeTree } from "./routeTree.gen"
 
 export const router = createRouter({

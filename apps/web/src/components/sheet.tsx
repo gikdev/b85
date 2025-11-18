@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { cn } from "tailwind-variants"
+import { tvcn } from "#/lib/utils"
 
 // #region <Container />
 interface ContainerProps {
@@ -22,10 +22,10 @@ function Container({
       />
 
       <div
-        className={cn(
+        className={tvcn(
           "flex flex-col rounded-t-md-elements max-h-[80dvh] overflow-hidden bg-tusi-950 border-t border-tusi-800",
           contentContainerClassName,
-        )()}
+        )}
       >
         {children}
       </div>
@@ -59,10 +59,10 @@ interface HeaderProps {
 function Header({ children, className }: HeaderProps) {
   return (
     <header
-      className={cn(
+      className={tvcn(
         "border-b border-tusi-800 p-4 flex items-center justify-center",
         className,
-      )()}
+      )}
     >
       {children}
     </header>
@@ -78,7 +78,7 @@ interface ContentProps {
 
 function Content({ children, className }: ContentProps) {
   return (
-    <header className={cn("p-4 flex-1 overflow-y-auto", className)()}>
+    <header className={tvcn("p-4 flex-1 overflow-y-auto", className)}>
       {children}
     </header>
   )
@@ -94,10 +94,10 @@ interface FooterProps {
 function Footer({ children, className }: FooterProps) {
   return (
     <footer
-      className={cn(
+      className={tvcn(
         "border-t border-tusi-800 p-4 flex items-center justify-center",
         className,
-      )()}
+      )}
     >
       {children}
     </footer>
