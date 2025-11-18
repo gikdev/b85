@@ -1,7 +1,7 @@
 import { toPersianDigits } from "#/lib/utils"
 import { useAppSelector } from "#/store"
-import { getCurrencyText } from "../../-shared"
-import { useDailyProgress } from "../../-store"
+import { getCurrencyText } from "../shared"
+import { useDailyProgress } from "../store"
 
 export function ProgressBar() {
   return (

@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import { useAppSelector } from "#/store"
-import type { Currency } from "./-shared"
+import type { Currency } from "./shared"
 
 interface WorkTimerStore {
   currency: Currency

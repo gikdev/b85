@@ -4,7 +4,7 @@ import { Sheet } from "#/components/sheet"
 import { useAppForm } from "#/form"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
-import { workTimerSlice } from "../../-store"
+import { workTimerSlice } from "../store"
 
 const ChangeTotalSchema = z.object({
   hours: z
@@ -34,15 +34,14 @@ const defaultMeta: FormMeta = {
   submitAction: null,
 }
 
-interface ChangeTotalSheetProps {
-  onClose?: () => void
-}
+const { setTotalSeconds, closeChangeTotalSheet } = workTimerSlice.actions
 
-export function ChangeTotalSheet({ onClose }: ChangeTotalSheetProps) {
+export function ChangeTotalSheet() {
   const totalSeconds = useAppSelector(s => s.apps.workTimer.totalSeconds)
+  const isOpen = useAppSelector(s => s.apps.workTimer.isChangeTotalSheetOpen)
   const dispatch = useAppDispatch()
-  const setTotal = (total: number) =>
-    dispatch(workTimerSlice.actions.setTotalSeconds(total))
+  const setTotal = (total: number) => dispatch(setTotalSeconds(total))
+  const close = () => dispatch(closeChangeTotalSheet())
 
   const form = useAppForm({
     defaultValues,
@@ -66,12 +65,14 @@ export function ChangeTotalSheet({ onClose }: ChangeTotalSheetProps) {
         setTotal(final < 0 ? 0 : final)
       }
 
-      onClose?.()
+      close()
     },
   })
 
+  if (!isOpen) return null
+
   return (
-    <Sheet.Container onOverlayClick={onClose}>
+    <Sheet.Container onOverlayClick={close}>
       <form.AppForm>
         <Sheet.Handle />
 

@@ -2,7 +2,7 @@ import { PaperPlaneTiltIcon } from "@phosphor-icons/react"
 import { useKeyPress } from "react-haiku"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppStore } from "#/store"
-import { calcWorkTimerElapsedSeconds, workTimerSlice } from "../-store"
+import { calcWorkTimerElapsedSeconds, workTimerSlice } from "../store"
 
 const { incTotalSecondsBy, resetTimer } = workTimerSlice.actions
 

@@ -2,7 +2,7 @@ import { PlayIcon, StopIcon } from "@phosphor-icons/react"
 import { useKeyPress } from "react-haiku"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
-import { workTimerSlice } from "../-store"
+import { workTimerSlice } from "../store"
 
 const useIsPlaying = () =>
   useAppSelector(s => {

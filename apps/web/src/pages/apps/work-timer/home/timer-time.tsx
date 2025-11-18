@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 import { TimeFormatter } from "#/lib/utils"
 import { useAppSelector } from "#/store"
-import { calcWorkTimerElapsedSeconds } from "../-store"
+import { calcWorkTimerElapsedSeconds } from "../store"
 
 const useElapsedSeconds = () =>
   useAppSelector(s => {

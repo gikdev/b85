@@ -1,18 +1,8 @@
 import { CheckCircleIcon, TargetIcon } from "@phosphor-icons/react"
 import { tvcn } from "#/lib/utils"
-import { useDailyProgress } from "../../-store"
-import { ProgressBar } from "./progress-bar"
+import { useDailyProgress } from "../store"
 
-export function GoalTracker() {
-  return (
-    <div className="rounded-md-elements flex gap-1 overflow-hidden h-10 w-full">
-      <ProgressBar />
-      <GoalTargetIndicator />
-    </div>
-  )
-}
-
-function GoalTargetIndicator() {
+export function GoalTargetIndicator() {
   const dailyProgressPercent = useDailyProgress()
   const isGoalAchieved = dailyProgressPercent >= 100
 

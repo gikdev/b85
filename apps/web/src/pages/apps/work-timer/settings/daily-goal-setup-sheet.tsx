@@ -4,9 +4,11 @@ import { Sheet } from "#/components/sheet"
 import { useAppForm } from "#/form"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
-import { workTimerSlice } from "../../../-store"
+import { workTimerSlice } from "../store"
 
-const DailyGoalSetupSchema = z.object({
+const { closeDailyGoalSetupSheet, setDailyTimeTarget } = workTimerSlice.actions
+
+const dailyGoalSetupSchema = z.object({
   daysPerMonth: z
     .number("تعداد روز کاری الزامی است")
     .min(1, "عدد باید مثبت (بیشتر از ۰) باشه!")
@@ -18,32 +20,33 @@ const DailyGoalSetupSchema = z.object({
     .max(1000000, "درآمد ایده‌آل نمی‌تواند بیشتر از ۱،۰۰۰،۰۰۰ باشد"),
 })
 
-type DailyGoalSetupFormValues = z.infer<typeof DailyGoalSetupSchema>
+type DailyGoalSetupFormValues = z.infer<typeof dailyGoalSetupSchema>
 
 const defaultValues: DailyGoalSetupFormValues = {
   daysPerMonth: 20,
   idealIncome: 10_000,
 }
 
-interface DailyGoalSetupSheetProps {
-  onClose?: () => void
-}
-
-export function DailyGoalSetupSheet({ onClose }: DailyGoalSetupSheetProps) {
+export function DailyGoalSetupSheet() {
+  const isOpen = useAppSelector(s => s.apps.workTimer.isDailyGoalSetupSheetOpen)
   const hourlyRate = useAppSelector(s => s.apps.workTimer.hourlyRate)
   const dispatch = useAppDispatch()
+
+  const onClose = () => dispatch(closeDailyGoalSetupSheet())
 
   const form = useAppForm({
     defaultValues,
     validators: {
-      onChange: DailyGoalSetupSchema,
+      onChange: dailyGoalSetupSchema,
     },
     onSubmit: ({ value }) => {
       const dailyTimeTarget = calcDailyTimeTarget(value, hourlyRate)
-      dispatch(workTimerSlice.actions.setDailyTimeTarget(dailyTimeTarget))
-      onClose?.()
+      dispatch(setDailyTimeTarget(dailyTimeTarget))
+      onClose()
     },
   })
+
+  if (!isOpen) return null
 
   return (
     <Sheet.Container onOverlayClick={onClose}>

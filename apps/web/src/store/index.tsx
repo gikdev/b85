@@ -17,7 +17,7 @@ import { loggingDevtoolsSlice } from "#/logging/slice"
 import { namoratabSlice } from "#/pages/apps/namoratab/store"
 import { nebulaSlice } from "#/pages/apps/nebula/store"
 import { rakatSlice } from "#/pages/apps/rakat/store"
-import { workTimerSlice } from "#/routes/apps/work-timer/-store"
+import { workTimerSlice } from "#/pages/apps/work-timer/store"
 
 const rootReducer = combineReducers({
   apps: combineReducers({

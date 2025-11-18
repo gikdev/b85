@@ -32,7 +32,12 @@ const simpleReduxDevtools: TanStackDevtoolsReactPlugin = {
   defaultOpen: false,
 }
 
-const plugins = [routerDevtools, queryDevtools, loggingDevtools, simpleReduxDevtools]
+const plugins = [
+  routerDevtools,
+  queryDevtools,
+  loggingDevtools,
+  simpleReduxDevtools,
+]
 
 const config: TanStackDevtoolsReactInit["config"] = {
   defaultOpen: false,

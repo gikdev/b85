@@ -1,24 +1,24 @@
 import { ClockIcon, GearIcon, TimerIcon } from "@phosphor-icons/react"
-import { useLocation, useNavigate } from "@tanstack/react-router"
+import { linkOptions, useLocation, useNavigate } from "@tanstack/react-router"
 import { useKeyPress } from "react-haiku"
 import { BottomTabBar, type TabItem } from "#/components/bottom-tab-bar"
 
 const workTimerTabs: TabItem[] = [
   {
     id: "timer",
-    url: "/apps/work-timer",
+    url: linkOptions({ to: "/apps/work-timer" }).to,
     title: "تایمر",
     Icon: TimerIcon,
   },
   {
     id: "total",
-    url: "/apps/work-timer/total",
+    url: linkOptions({ to: "/apps/work-timer/total" }).to,
     title: "مجموع",
     Icon: ClockIcon,
   },
   {
     id: "settings",
-    url: "/apps/work-timer/settings",
+    url: linkOptions({ to: "/apps/work-timer/settings" }).to,
     title: "تنظیمات",
     Icon: GearIcon,
   },

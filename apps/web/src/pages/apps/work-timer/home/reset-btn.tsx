@@ -2,7 +2,7 @@ import { ArrowUUpRightIcon } from "@phosphor-icons/react"
 import { useKeyPress } from "react-haiku"
 import { skins } from "#/shared/skins"
 import { useAppDispatch } from "#/store"
-import { workTimerSlice } from "../-store"
+import { workTimerSlice } from "../store"
 
 const { resetTimer } = workTimerSlice.actions
 
