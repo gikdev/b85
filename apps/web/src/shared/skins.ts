@@ -152,6 +152,7 @@ const input = tv({
     bg-tusi-800 outline-none border-b-2 min-h-14
     border-transparent focus:border-brand-500
     text-tusi-100
+    disabled:opacity-50
   `,
   variants: {
     isMultiline: {

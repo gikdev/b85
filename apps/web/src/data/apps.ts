@@ -5,6 +5,7 @@ import {
   ListChecksIcon,
   NumberCircleOneIcon,
   SquareIcon,
+  TextboxIcon,
   TextIndentIcon,
   TimerIcon,
   TipJarIcon,
@@ -37,6 +38,11 @@ export const apps: App[] = [
     id: "namoratab",
     title: "نامرتب",
     Icon: TextIndentIcon,
+  },
+  {
+    id: "promptor",
+    title: "پرامپتور",
+    Icon: TextboxIcon,
   },
   {
     id: "todos",

@@ -1,5 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
 import { extractErrorMessage } from "./errors"
+import { toast } from "react-toastify"
 
 export async function copyTextToClipboard(text: string): Promise<void> {
   await navigator.clipboard.writeText(text)
@@ -19,6 +20,6 @@ export const useCopyToClipboardMutation = () =>
     mutationKey,
     mutationFn,
     onError: error =>
-      alert(`یه مشکلی پیش اومد: ${extractErrorMessage({ error })}`),
-    onSuccess: () => {},
+      toast.error(`یه مشکلی پیش اومد: ${extractErrorMessage({ error })}`),
+    onSuccess: () => toast.success("انجام شد."),
   })
