@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node ./scripts/dev.js",
     "build": "powershell ./scripts/build.ps1",
-    "preview": "cd build/ && dotnet ./Api.dll",
+    "preview": "dotnet ./build/Api.dll",
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "check": "biome check --write ."
