@@ -27,8 +27,10 @@ export const HomePage = () => (
       ))}
     </div>
 
-    <p className="text-center">
-      <code>v{config.version}</code>
+    <p className="text-center" dir="ltr">
+      <code>
+        v{config.version} {import.meta.env.DEV && "</>"}
+      </code>
     </p>
   </div>
 )
