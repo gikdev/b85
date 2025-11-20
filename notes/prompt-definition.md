@@ -1,13 +1,3 @@
-Here’s a **clean, scalable TypeScript pattern** for defining *structured prompts* so that:
-
-1. Each prompt has **variables / fields**
-2. You can **auto-generate forms** for those variables
-3. And you can **generate the final prompt text** using filled values
-
-This pattern works in React, Next.js, Zustand, TanStack Form, any UI library.
-
----
-
 # ✅ **Core Idea**
 
 Define prompts as **typed objects** with:
