@@ -1,11 +1,12 @@
 /** biome-ignore-all lint/performance/noDynamicNamespaceImportAccess: It is what it is... */
+
+import { TrashIcon } from "@phosphor-icons/react"
 import { useState } from "react"
 import { GoHomeBtn } from "#/components/go-home-btn"
 import { TopAppBar } from "#/components/top-app-bar"
 import { useCopyToClipboardMutation } from "#/lib/copy-to-clipboard"
 import { skins } from "#/shared/skins"
 import * as prompts from "./prompts"
-import { TrashIcon } from "@phosphor-icons/react"
 
 export const HomePage = () => (
   <div className={skins.page()}>

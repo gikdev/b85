@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query"
-import { extractErrorMessage } from "./errors"
 import { toast } from "react-toastify"
+import { extractErrorMessage } from "./errors"
 
 export async function copyTextToClipboard(text: string): Promise<void> {
   await navigator.clipboard.writeText(text)
