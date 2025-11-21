@@ -21,7 +21,7 @@ export function TimerTime() {
   const timerTime = new TimeFormatter(elapsedSeconds).toPersianTime()
 
   return (
-    <p dir="ltr" className="text-title font-black text-tusi-100">
+    <p dir="ltr" className="text-title font-black text-main-fg">
       {timerTime}
     </p>
   )

@@ -1,3 +1,4 @@
+import { logger } from "#/logging"
 import type { ReactNode } from "react"
 import { createPortal } from "react-dom"
 
@@ -10,7 +11,7 @@ export function Portal({ children, query }: PortalProps) {
   const target = document.querySelector(query)
 
   if (!target) {
-    console.warn("No target elements found in Portal component")
+    logger.warn("No target elements found in Portal component")
     return null
   }
 

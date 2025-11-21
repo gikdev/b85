@@ -2,81 +2,67 @@
 @import "../assets/fonts/Lahzeh.css";
 @import "../assets/fonts/Vazir-Code-Hack.css";
 
+:root {
+  --main-bg: hsl(0 0% 9%);
+  --main-fg: hsl(0 0% 90%);
+
+  --primary-bg: hsl(217 91% 60%);
+  --primary-fg: hsl(0 0% 100%);
+
+  --secondary-bg: hsl(0 0% 15%);
+  --secondary-fg: hsl(0 0% 90%);
+
+  --muted-bg: hsl(0 0% 12%);
+  --muted-fg: hsl(0 0% 64%);
+
+  --accent-bg: hsl(224 64% 33%);
+  --accent-fg: hsl(213 97% 87%);
+
+  --destructive-bg: hsl(0 84% 60%);
+  --destructive-fg: hsl(0 0% 100%);
+
+  --success-bg: hsl(160, 84%, 60%);
+  --success-fg: hsl(160 0% 100%);
+
+  --warning-bg: hsl(60, 84%, 60%);
+  --warning-fg: hsl(60 0% 100%);
+
+  --border: hsl(0 0% 25%);
+  --input: hsl(0 0% 25%);
+  --ring: hsl(217 91% 60%);
+}
+
 @theme inline {
+  --color-main-bg: var(--main-bg);
+  --color-main-fg: var(--main-fg);
+
+  --color-primary-bg: var(--primary-bg);
+  --color-primary-fg: var(--primary-fg);
+
+  --color-secondary-bg: var(--secondary-bg);
+  --color-secondary-fg: var(--secondary-fg);
+
+  --color-muted-bg: var(--muted-bg);
+  --color-muted-fg: var(--muted-fg);
+
+  --color-accent-bg: var(--accent-bg);
+  --color-accent-fg: var(--accent-fg);
+
+  --color-destructive-bg: var(--destructive-bg);
+  --color-destructive-fg: var(--destructive-fg);
+
+  --color-success-bg: var(--success-bg);
+  --color-success-fg: var(--success-fg);
+
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-fg: var(--warning-fg);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --font-main: "Lahzeh Variable", "Vazirmatn", sans-serif;
   --font-code: "Vazir Code Hack", "Vazirmatn", sans-serif;
-
-  --color-tusi-50: var(--color-zinc-50);
-  --color-tusi-100: var(--color-zinc-100);
-  --color-tusi-200: var(--color-zinc-200);
-  --color-tusi-300: var(--color-zinc-300);
-  --color-tusi-400: var(--color-zinc-400);
-  --color-tusi-500: var(--color-zinc-500);
-  --color-tusi-600: var(--color-zinc-600);
-  --color-tusi-700: var(--color-zinc-700);
-  --color-tusi-800: var(--color-zinc-800);
-  --color-tusi-900: var(--color-zinc-900);
-  --color-tusi-950: var(--color-zinc-950);
-
-  --color-brand-50: var(--color-sky-50);
-  --color-brand-100: var(--color-sky-100);
-  --color-brand-200: var(--color-sky-200);
-  --color-brand-300: var(--color-sky-300);
-  --color-brand-400: var(--color-sky-400);
-  --color-brand-500: var(--color-sky-500);
-  --color-brand-600: var(--color-sky-600);
-  --color-brand-700: var(--color-sky-700);
-  --color-brand-800: var(--color-sky-800);
-  --color-brand-900: var(--color-sky-900);
-  --color-brand-950: var(--color-sky-950);
-
-  --color-danger-50: var(--color-red-50);
-  --color-danger-100: var(--color-red-100);
-  --color-danger-200: var(--color-red-200);
-  --color-danger-300: var(--color-red-300);
-  --color-danger-400: var(--color-red-400);
-  --color-danger-500: var(--color-red-500);
-  --color-danger-600: var(--color-red-600);
-  --color-danger-700: var(--color-red-700);
-  --color-danger-800: var(--color-red-800);
-  --color-danger-900: var(--color-red-900);
-  --color-danger-950: var(--color-red-950);
-
-  --color-warning-50: var(--color-yellow-50);
-  --color-warning-100: var(--color-yellow-100);
-  --color-warning-200: var(--color-yellow-200);
-  --color-warning-300: var(--color-yellow-300);
-  --color-warning-400: var(--color-yellow-400);
-  --color-warning-500: var(--color-yellow-500);
-  --color-warning-600: var(--color-yellow-600);
-  --color-warning-700: var(--color-yellow-700);
-  --color-warning-800: var(--color-yellow-800);
-  --color-warning-900: var(--color-yellow-900);
-  --color-warning-950: var(--color-yellow-950);
-
-  --color-info-50: var(--color-blue-50);
-  --color-info-100: var(--color-blue-100);
-  --color-info-200: var(--color-blue-200);
-  --color-info-300: var(--color-blue-300);
-  --color-info-400: var(--color-blue-400);
-  --color-info-500: var(--color-blue-500);
-  --color-info-600: var(--color-blue-600);
-  --color-info-700: var(--color-blue-700);
-  --color-info-800: var(--color-blue-800);
-  --color-info-900: var(--color-blue-900);
-  --color-info-950: var(--color-blue-950);
-
-  --color-success-50: var(--color-emerald-50);
-  --color-success-100: var(--color-emerald-100);
-  --color-success-200: var(--color-emerald-200);
-  --color-success-300: var(--color-emerald-300);
-  --color-success-400: var(--color-emerald-400);
-  --color-success-500: var(--color-emerald-500);
-  --color-success-600: var(--color-emerald-600);
-  --color-success-700: var(--color-emerald-700);
-  --color-success-800: var(--color-emerald-800);
-  --color-success-900: var(--color-emerald-900);
-  --color-success-950: var(--color-emerald-950);
 
   --breakpoint-xs: 24rem;
 

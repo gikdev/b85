@@ -1,6 +1,7 @@
 import { CopyIcon } from "@phosphor-icons/react"
 import { toast } from "react-toastify"
 import { Sheet } from "#/components/sheet"
+import { Button } from "#/components/ui/button"
 import { copyTextToClipboard } from "#/lib/copy-to-clipboard"
 import { extractErrorMessage } from "#/lib/errors"
 import { skins } from "#/shared/skins"
@@ -24,7 +25,7 @@ export function ResultSheet() {
       <Sheet.Handle />
 
       <Sheet.Content className="flex flex-col gap-4">
-        <p className="font-bold text-h3 text-tusi-100 text-center">خروجی:</p>
+        <p className="font-bold text-h3 text-main-fg text-center">خروجی:</p>
 
         <textarea
           readOnly
@@ -52,13 +53,9 @@ function CopyResultBtn() {
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className={skins.btn({ intent: "neutral", mode: "text" })}
-    >
+    <Button variant="outline" onClick={handleClick}>
       <CopyIcon />
       <span>کپی</span>
-    </button>
+    </Button>
   )
 }

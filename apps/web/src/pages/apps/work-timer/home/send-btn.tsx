@@ -1,6 +1,6 @@
 import { PaperPlaneTiltIcon } from "@phosphor-icons/react"
 import { useKeyPress } from "react-haiku"
-import { skins } from "#/shared/skins"
+import { Button } from "#/components/ui/button"
 import { useAppDispatch, useAppStore } from "#/store"
 import { calcWorkTimerElapsedSeconds, workTimerSlice } from "../store"
 
@@ -20,12 +20,8 @@ export function SendBtn() {
   useKeyPress(["s"], addElapsedToTotal)
 
   return (
-    <button
-      type="button"
-      className={skins.btnIcon({ size: "lg" })}
-      onClick={addElapsedToTotal}
-    >
-      <PaperPlaneTiltIcon size={32} />
-    </button>
+    <Button size="icon-xl" onClick={addElapsedToTotal}>
+      <PaperPlaneTiltIcon />
+    </Button>
   )
 }

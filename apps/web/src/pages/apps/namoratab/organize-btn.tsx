@@ -1,5 +1,5 @@
 import { SparkleIcon } from "@phosphor-icons/react"
-import { skins } from "#/shared/skins"
+import { Button } from "#/components/ui/button"
 import { useAppSelector } from "#/store"
 import { useOrganizeWithAi } from "./shared"
 
@@ -9,14 +9,9 @@ export function OrganizeBtn() {
   const organize = () => mutate(content)
 
   return (
-    <button
-      type="button"
-      disabled={isPending}
-      onClick={organize}
-      className={skins.btn({ color: "brand" })}
-    >
+    <Button variant="primary" disabled={isPending} onClick={organize}>
       <SparkleIcon weight="fill" />
       <span>مرتب کن</span>
-    </button>
+    </Button>
   )
 }

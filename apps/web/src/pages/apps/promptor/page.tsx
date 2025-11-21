@@ -4,6 +4,7 @@ import { TrashIcon } from "@phosphor-icons/react"
 import { useState } from "react"
 import { GoHomeBtn } from "#/components/go-home-btn"
 import { TopAppBar } from "#/components/top-app-bar"
+import { Button } from "#/components/ui/button"
 import { useCopyToClipboardMutation } from "#/lib/copy-to-clipboard"
 import { skins } from "#/shared/skins"
 import * as prompts from "./prompts"
@@ -54,22 +55,18 @@ function MainSection() {
       />
 
       <div className="flex items-center gap-2 w-full">
-        <button
-          type="button"
-          className={skins.btnIcon({})}
+        <Button
+          variant="destructive"
+          size="icon-md"
           onClick={() => setInput("")}
         >
           <TrashIcon />
-        </button>
+        </Button>
 
-        <button
-          type="button"
+        <Button
+          className="flex-1"
+          variant="primary"
           disabled={selectedPrompt === "" || input === ""}
-          className={skins.btn({
-            intent: "brand",
-            mode: "contained",
-            className: "flex-1",
-          })}
           onClick={() => {
             const prompt = prompts[selectedPrompt as Prompt]
             const result = prompt.render({ input })
@@ -77,7 +74,7 @@ function MainSection() {
           }}
         >
           ساخت و کپی پرامپت
-        </button>
+        </Button>
       </div>
     </main>
   )

@@ -23,7 +23,7 @@ function RakatOptionSection() {
 
   return (
     <div className="flex flex-col gap-8">
-      <h1 className="text-h1 font-bold text-tusi-100 text-center">چند رکعت؟</h1>
+      <h1 className="text-h1 font-bold text-main-fg text-center">چند رکعت؟</h1>
 
       <p className="text-center">
         تعداد رکعت یا نمازی که می‌خوای بخونی رو انتخاب کن
@@ -46,7 +46,8 @@ interface RakatOptionProps {
 function RakatOption({ title, onClick }: RakatOptionProps) {
   const containerStyles = tvcn(`
     cursor-pointer rounded-sm-elements
-    hover:bg-tusi-800 hover:text-tusi-100
+    bg-secondary-bg/50
+    hover:bg-secondary-bg hover:text-main-fg
     flex items-center justify-start
     py-2 gap-4 min-h-14 px-4
   `)

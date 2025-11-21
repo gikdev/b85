@@ -17,16 +17,20 @@ export function TopAppBar({
   return (
     <header
       className={tvcn(
-        "h-16 p-2 flex items-center justify-between border-b border-tusi-800",
+        "h-16 p-2 flex items-center justify-between border-b border-border",
         className,
       )}
     >
-      <div className="size-12">{startingStuff}</div>
+      <div className="size-12 flex items-center justify-center">
+        {startingStuff}
+      </div>
       {/* {startingStuff} */}
 
-      <p className="font-bold text-tusi-100">{title}</p>
+      <p className="font-bold text-main-fg">{title}</p>
 
-      <div className="size-12">{endingStuff}</div>
+      <div className="size-12 flex items-center justify-center">
+        {endingStuff}
+      </div>
     </header>
   )
 }

@@ -1,6 +1,6 @@
 import { ArrowClockwiseIcon } from "@phosphor-icons/react"
 import { useNavigate } from "@tanstack/react-router"
-import { skins } from "#/shared/skins"
+import { Button } from "#/components/ui/button"
 import { useAppDispatch } from "#/store"
 import { rakatSlice } from "../store"
 
@@ -16,13 +16,9 @@ export function ResetBtn() {
   }
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      className={skins.btn({ className: "w-full" })}
-    >
-      <ArrowClockwiseIcon size={24} weight="fill" />
+    <Button variant="ghost" onClick={handleClick} className="w-full">
+      <ArrowClockwiseIcon />
       <span>از اول</span>
-    </button>
+    </Button>
   )
 }

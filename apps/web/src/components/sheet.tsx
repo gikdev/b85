@@ -23,7 +23,7 @@ function Container({
 
       <div
         className={tvcn(
-          "flex flex-col rounded-t-md-elements max-h-[80dvh] overflow-hidden bg-tusi-950 border-t border-tusi-800",
+          "flex flex-col rounded-t-md-elements max-h-[80dvh] overflow-hidden bg-main-bg border-t border-border",
           contentContainerClassName,
         )}
       >
@@ -44,7 +44,7 @@ function Handle({ onClick }: HandleProps) {
 
   return (
     <Tag className="p-2 flex items-center justify-center" onClick={onClick}>
-      <div className="w-12 h-1 rounded-sm-elements bg-tusi-800" />
+      <div className="w-12 h-1 rounded-sm-elements bg-secondary-bg" />
     </Tag>
   )
 }
@@ -60,7 +60,7 @@ function Header({ children, className }: HeaderProps) {
   return (
     <header
       className={tvcn(
-        "border-b border-tusi-800 p-4 flex items-center justify-center",
+        "border-b border-border p-4 flex items-center justify-center",
         className,
       )}
     >
@@ -95,7 +95,7 @@ function Footer({ children, className }: FooterProps) {
   return (
     <footer
       className={tvcn(
-        "border-t border-tusi-800 p-4 flex items-center justify-center",
+        "border-t border-border p-4 flex items-center justify-center",
         className,
       )}
     >

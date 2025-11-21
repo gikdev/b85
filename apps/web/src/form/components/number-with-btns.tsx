@@ -1,13 +1,9 @@
 import { MinusIcon, PlusIcon } from "@phosphor-icons/react"
-import { useId } from "react"
 import { skins } from "#/shared/skins"
 import { useFieldContext } from ".."
 import { ErrorMsg } from "./error-msg"
-
-const inputishBtn = skins.btnIcon({
-  size: "inputish",
-  theme: "inputish",
-})
+import { Button } from "#/components/ui/button"
+import { useId } from "react"
 
 interface NumberWithBtnsProps {
   label: string
@@ -22,13 +18,13 @@ export function NumberWithBtns({ label }: NumberWithBtnsProps) {
       <label htmlFor={id}>{label}</label>
 
       <div className={skins.elementGroup({ className: "h-14" })}>
-        <button
-          type="button"
+        <Button
+          size="icon-md"
+          variant="ghost"
           onClick={() => field.handleChange(field.state.value - 1)}
-          className={inputishBtn}
         >
-          <MinusIcon size={24} />
-        </button>
+          <MinusIcon />
+        </Button>
 
         <input
           dir="ltr"
@@ -44,13 +40,13 @@ export function NumberWithBtns({ label }: NumberWithBtnsProps) {
           })}
         />
 
-        <button
-          type="button"
+        <Button
+          size="icon-md"
+          variant="ghost"
           onClick={() => field.handleChange(field.state.value + 1)}
-          className={inputishBtn}
         >
-          <PlusIcon size={24} />
-        </button>
+          <PlusIcon />
+        </Button>
       </div>
 
       <ErrorMsg field={field} />

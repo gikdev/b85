@@ -12,16 +12,16 @@ const btnIcon = tv({
   `,
   variants: {
     size: {
+      desktop: "size-8 p-1 rounded-sm-elements", // icon size = 24
       md: "size-12 p-2 rounded-sm-elements", // icon size = 32
+      input: "size-14 p-1 rounded-sm-elements", // icon size = 24
       lg: "size-16 p-4 rounded-sm-elements", // icon size = 32
       xl: "size-24 p-6 rounded-xl-elements", // icon size = 48
-      inputish: "size-14 p-1 rounded-sm-elements", // icon size = 24
-      iconDesktop: "size-8 p-1 rounded-sm-elements", // icon size = 24
     },
     theme: {
       glass: `
-        text-tusi-400 hover:text-tusi-100 disabled:hover:text-tusi-400
-        bg-transparent hover:bg-tusi-800 disabled:hover:bg-transparent 
+        text-muted-fg hover:text-main-fg disabled:hover:text-muted-fg
+        bg-transparent hover:bg-secondary-bg disabled:hover:bg-transparent 
       `,
       brand: `
         bg-brand-600 hover:bg-brand-700 disabled:bg-tusi-700 disabled:hover:bg-tusi-700
@@ -50,18 +50,18 @@ const btn = tv({
   variants: {
     mode: {
       contained: `
-        text-tusi-100
-        disabled:text-tusi-400
-        disabled:bg-tusi-600 
-        disabled:hover:bg-tusi-600
+        text-main-fg
+        disabled:text-muted-fg
+        disabled:bg-muted-bg
+        disabled:hover:bg-muted-bg
       `,
       outline: null,
       text: `
         bg-transparent
-        disabled:text-tusi-400
-        disabled:hover:text-tusi-400
-        disabled:bg-tusi-800 
-        disabled:hover:bg-tusi-800
+        disabled:text-muted-fg
+        disabled:hover:text-muted-fg
+        disabled:bg-muted-bg
+        disabled:hover:bg-muted-bg
       `,
     },
     intent: {
@@ -84,9 +84,9 @@ const btn = tv({
         hover:bg-tusi-700   disabled:hover:bg-tusi-800
       `,
       brand: `
-        text-tusi-100      disabled:text-tusi-400
-        bg-brand-600       disabled:bg-tusi-600 
-        hover:bg-brand-700 disabled:hover:bg-tusi-600
+        text-main-fg      disabled:text-muted-fg
+        bg-primary-bg     disabled:bg-muted-bg
+        hover:bg-primary-bg/90 disabled:hover:bg-primary-bg
       `,
     },
   },
@@ -128,8 +128,8 @@ const btn = tv({
       intent: "brand",
       mode: "contained",
       className: `
-        bg-brand-600
-        hover:bg-brand-700
+        bg-primary-bg
+        hover:bg-primary-bg/90
       `,
     },
   ],
@@ -141,17 +141,17 @@ const btn = tv({
 const select = tv({
   base: `
     py-2 px-4 font-[inherit] rounded-sm-elements
-    bg-tusi-800 outline-2 outline-transparent min-h-14
-    focus:outline-brand-500 outline-offset-2 text-tusi-100
+    bg-secondary-bg outline-2 outline-transparent min-h-14
+    focus:outline-ring outline-offset-2 text-main-fg
   `,
 })
 
 const input = tv({
   base: `
     py-2 px-4 font-[inherit] rounded-sm-elements
-    bg-tusi-800 outline-none border-b-2 min-h-14
-    border-transparent focus:border-brand-500
-    text-tusi-100
+    bg-muted-bg outline-none border-b-2 min-h-14
+    border-transparent focus:border-border
+    text-main-fg
     disabled:opacity-50
   `,
   variants: {
@@ -169,7 +169,7 @@ const labeler = tv({
   base: "flex flex-col gap-2 w-full",
 })
 
-const errorMsg = () => "text-danger-400 text-body-sm"
+const errorMsg = () => "text-destructive-fg text-body-sm"
 
 const elementGroup = tv({
   base: "flex gap-1 rounded-md-elements overflow-hidden w-full",

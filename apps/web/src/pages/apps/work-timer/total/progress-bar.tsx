@@ -5,7 +5,7 @@ import { useDailyProgress } from "../store"
 
 export function ProgressBar() {
   return (
-    <div className="h-full flex-1 bg-tusi-800 relative">
+    <div className="h-full flex-1 bg-muted-bg relative">
       <ProgressBarCore />
 
       <ProgressBarContent />
@@ -21,7 +21,7 @@ function ProgressBarCore() {
   return (
     <div className="w-full h-full flex justify-start">
       <div
-        className="h-full bg-brand-600 rounded-sm-elements"
+        className="h-full bg-primary-bg rounded-sm-elements"
         style={{ width }}
       />
     </div>
@@ -33,7 +33,7 @@ function ProgressBarContent() {
   const totalMoney = useTotalMoneyFa()
 
   return (
-    <div className="absolute inset-0 flex justify-between items-center px-2 text-tusi-100 font-bold">
+    <div className="absolute inset-0 flex justify-between items-center px-2 text-main-fg font-bold">
       <span>{totalMoney}</span>
       <span>{dailyProgressPercentage}</span>
     </div>

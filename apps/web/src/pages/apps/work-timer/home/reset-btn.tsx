@@ -1,6 +1,6 @@
 import { ArrowUUpRightIcon } from "@phosphor-icons/react"
 import { useKeyPress } from "react-haiku"
-import { skins } from "#/shared/skins"
+import { Button } from "#/components/ui/button"
 import { useAppDispatch } from "#/store"
 import { workTimerSlice } from "../store"
 
@@ -14,12 +14,8 @@ export function ResetBtn() {
   useKeyPress(["r"], handleTimerReset)
 
   return (
-    <button
-      type="button"
-      className={skins.btnIcon({ size: "lg" })}
-      onClick={handleTimerReset}
-    >
-      <ArrowUUpRightIcon size={32} />
-    </button>
+    <Button size="icon-xl" onClick={handleTimerReset}>
+      <ArrowUUpRightIcon />
+    </Button>
   )
 }

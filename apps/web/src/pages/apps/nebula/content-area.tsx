@@ -37,7 +37,7 @@ export function ContentArea() {
         onBlur={handleBlur}
         className="
           w-full flex-1 resize-none border-none
-          outline-none focus:text-tusi-100
+          outline-none focus:text-main-fg
           font-code no-scrollbar
         "
       />

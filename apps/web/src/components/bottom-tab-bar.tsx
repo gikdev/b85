@@ -16,7 +16,7 @@ interface BottomTabBarProps {
 
 export function BottomTabBar({ tabItems }: BottomTabBarProps) {
   return (
-    <footer className="h-16 flex border-t border-tusi-800">
+    <footer className="h-16 flex border-t border-border">
       {tabItems.map(item => (
         <Tab key={item.id} Icon={item.Icon} title={item.title} url={item.url} />
       ))}
@@ -34,10 +34,11 @@ function Tab({ Icon, title, url }: TabProps) {
     `
       flex flex-col gap-0 
       flex-1 cursor-pointer
-      hover:bg-tusi-800 hover:text-tusi-100
+      bg-secondary-bg/0 hover:bg-secondary-bg/50
+      hover:text-main-fg
       items-center justify-center
     `,
-    isActive ? "text-tusi-100" : "",
+    isActive ? "text-main-fg" : "",
   )
 
   const styleText = tvcn("text-body-sm", isActive ? "font-bold" : "")

@@ -10,7 +10,7 @@ export function TotalTime() {
   const totalSeconds = useTotalSeconds()
 
   return (
-    <p className="text-title font-black text-tusi-100" dir="ltr">
+    <p className="text-title font-black text-main-fg" dir="ltr">
       {totalSeconds}
     </p>
   )

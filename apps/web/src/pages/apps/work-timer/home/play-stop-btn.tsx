@@ -1,6 +1,6 @@
 import { PlayIcon, StopIcon } from "@phosphor-icons/react"
 import { useKeyPress } from "react-haiku"
-import { skins } from "#/shared/skins"
+import { Button } from "#/components/ui/button"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
 
@@ -28,12 +28,8 @@ export function PlayStopBtn() {
   useKeyPress([" "], thingToDo)
 
   return (
-    <button
-      type="button"
-      className={skins.btnIcon({ size: "xl", theme: "brand" })}
-      onClick={thingToDo}
-    >
-      <Icon size={48} weight="fill" />
-    </button>
+    <Button size="icon-3xl" variant="primary" onClick={thingToDo}>
+      <Icon weight="fill" />
+    </Button>
   )
 }

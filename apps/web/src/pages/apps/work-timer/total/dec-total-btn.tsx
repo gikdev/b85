@@ -1,7 +1,7 @@
+import { Button } from "#/components/ui/button"
 import { MinusIcon } from "@phosphor-icons/react"
-import { useKeyPress } from "react-haiku"
-import { skins } from "#/shared/skins"
 import { useAppDispatch } from "#/store"
+import { useKeyPress } from "react-haiku"
 import { workTimerSlice } from "../store"
 
 const { decTotalSeconds } = workTimerSlice.actions
@@ -13,12 +13,8 @@ export function DecTotalBtn() {
   useKeyPress(["-"], handleDecTotalSeconds)
 
   return (
-    <button
-      type="button"
-      className={skins.btnIcon({ size: "lg", theme: "glass" })}
-      onClick={handleDecTotalSeconds}
-    >
+    <Button onClick={handleDecTotalSeconds} variant="ghost" size="icon-xl">
       <MinusIcon size={32} />
-    </button>
+    </Button>
   )
 }

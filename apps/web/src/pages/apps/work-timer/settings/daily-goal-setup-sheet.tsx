@@ -2,9 +2,9 @@ import { MathOperationsIcon } from "@phosphor-icons/react"
 import { z } from "zod/v4"
 import { Sheet } from "#/components/sheet"
 import { useAppForm } from "#/form"
-import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
+import { buttonVariants } from "#/components/ui/button"
 
 const { closeDailyGoalSetupSheet, setDailyTimeTarget } = workTimerSlice.actions
 
@@ -61,19 +61,16 @@ export function DailyGoalSetupSheet() {
           <form.AppField name="idealIncome">
             {field => <field.SimpleNumber label="درآمد ایده‌آل" />}
           </form.AppField>
-        </Sheet.Content>
 
-        <Sheet.Footer>
           <form.SubmitBtn
             iconStarting={<MathOperationsIcon weight="fill" />}
             title="محاسبه هدف روزانه"
-            className={skins.btn({
-              intent: "brand",
-              mode: "contained",
+            className={buttonVariants({
+              variant: "primary",
               className: "w-full",
             })}
           />
-        </Sheet.Footer>
+        </Sheet.Content>
       </form.AppForm>
     </Sheet.Container>
   )

@@ -1,7 +1,7 @@
 import { PencilSimpleIcon } from "@phosphor-icons/react"
-import { skins } from "#/shared/skins"
 import { useAppDispatch } from "#/store"
 import { workTimerSlice } from "../store"
+import { Button } from "#/components/ui/button"
 
 const { openChangeTotalSheet } = workTimerSlice.actions
 
@@ -10,12 +10,8 @@ export function ChangeTotal() {
   const open = () => dispatch(openChangeTotalSheet())
 
   return (
-    <button
-      type="button"
-      onClick={open}
-      className={skins.btnIcon({ size: "lg", theme: "glass" })}
-    >
-      <PencilSimpleIcon size={32} />
-    </button>
+    <Button onClick={open} variant="ghost" size="icon-xl">
+      <PencilSimpleIcon />
+    </Button>
   )
 }

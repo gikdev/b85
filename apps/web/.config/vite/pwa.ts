@@ -17,7 +17,7 @@ export const vitePwa = VitePWA({
   },
 
   workbox: {
-    globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
+    globPatterns: ["**/*.{js,css,html,svg,png,ico,woff,woff2,ttf}"],
     cleanupOutdatedCaches: true,
     clientsClaim: true,
   },

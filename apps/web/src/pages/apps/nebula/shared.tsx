@@ -1,24 +1,14 @@
 import { DownloadSimpleIcon } from "@phosphor-icons/react"
+import { Button } from "#/components/ui/button"
 import { downloadContent } from "#/lib/file"
-import { skins } from "#/shared/skins"
 import { useAppSelector } from "#/store"
 
-interface DownloadContentBtnProps {
-  isDesktop?: boolean
-}
-
-export function DownloadContentBtn({
-  isDesktop = false,
-}: DownloadContentBtnProps) {
+export function DownloadContentBtn() {
   const content = useAppSelector(s => s.apps.nebula.content)
 
   return (
-    <button
-      type="button"
-      className={skins.btnIcon({ size: isDesktop ? "iconDesktop" : undefined })}
-      onClick={() => downloadContent(content)}
-    >
-      <DownloadSimpleIcon size={isDesktop ? 24 : 32} />
-    </button>
+    <Button size="icon-md" onClick={() => downloadContent(content)}>
+      <DownloadSimpleIcon />
+    </Button>
   )
 }

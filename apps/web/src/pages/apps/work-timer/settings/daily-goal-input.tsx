@@ -4,6 +4,7 @@ import { TimeFormatter } from "#/lib/utils"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
+import { Button } from "#/components/ui/button"
 
 const inputStyle = skins.input({ className: "flex-1 w-full" })
 
@@ -38,12 +39,8 @@ function ChangeDailyGoalBtn() {
   const open = () => dispatch(openDailyGoalSetupSheet())
 
   return (
-    <button
-      type="button"
-      onClick={open}
-      className={skins.btnIcon({ size: "inputish", theme: "inputish" })}
-    >
+    <Button onClick={open} size="icon-md" variant="ghost">
       <PencilSimpleIcon size={24} />
-    </button>
+    </Button>
   )
 }

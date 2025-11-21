@@ -1,6 +1,6 @@
 import { XIcon } from "@phosphor-icons/react"
 import { Sheet } from "#/components/sheet"
-import { skins } from "#/shared/skins"
+import { Button } from "#/components/ui/button"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { namoratabSlice } from "./store"
 
@@ -18,7 +18,7 @@ export function AboutSheet() {
       <Sheet.Handle />
 
       <Sheet.Content className="flex flex-col gap-4 text-center">
-        <p className="font-bold text-h3 text-tusi-100">درباره «نامرتب»</p>
+        <p className="font-bold text-h3 text-main-fg">درباره «نامرتب»</p>
 
         <p className="leading-relaxed">
           هدف این برنامه، کمک به کانال‌دارانی هست که باید محتوای کانال‌شون مرتب،
@@ -28,14 +28,10 @@ export function AboutSheet() {
           شد ✨
         </p>
 
-        <button
-          type="button"
-          onClick={onClose}
-          className={skins.btn({ intent: "neutral", mode: "text" })}
-        >
+        <Button variant="outline" onClick={onClose}>
           <XIcon />
           <span>بستن</span>
-        </button>
+        </Button>
       </Sheet.Content>
     </Sheet.Container>
   )

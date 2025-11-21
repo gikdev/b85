@@ -1,12 +1,12 @@
 import { HouseIcon } from "@phosphor-icons/react"
 import { Link } from "@tanstack/react-router"
-import { skins } from "#/shared/skins"
+import { buttonVariants } from "./ui/button"
 
-export const GoHomeBtn = ({ isDesktop = false }: { isDesktop?: boolean }) => (
+export const GoHomeBtn = () => (
   <Link
     to="/"
-    className={skins.btnIcon({ size: isDesktop ? "iconDesktop" : undefined })}
+    className={buttonVariants({ size: "icon-md", variant: "ghost" })}
   >
-    <HouseIcon size={isDesktop ? 24 : 32} />
+    <HouseIcon />
   </Link>
 )

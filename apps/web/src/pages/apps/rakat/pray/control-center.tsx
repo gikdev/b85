@@ -14,7 +14,7 @@ export function ControlCenter() {
     <button
       type="button"
       onClick={() => dispatch(incCurrentSajde())}
-      className="w-full flex-1 flex flex-col p-2 gap-2 rounded-sm-elements border-2 border-dashed border-brand-600"
+      className="w-full flex-1 flex flex-col p-2 gap-2 rounded-sm-elements border-2 border-dashed border-border"
     >
       <Rakat disabled={rakatCount < 1} isOff={currentSajde < 0}>
         <Sajde isOff={currentSajde < 1} />
@@ -49,9 +49,9 @@ function Rakat({ children, disabled, isOff }: RakatProps) {
   return (
     <div
       className={tvcn(
-        "w-full rounded-sm-elements flex flex-1 bg-tusi-700 gap-2 p-2",
+        "w-full rounded-sm-elements flex flex-1 bg-secondary-bg gap-2 p-2",
         disabled ? "invisible" : "",
-        isOff ? "opacity-25" : "",
+        isOff ? "bg-muted-bg" : "",
       )}
     >
       {children}
@@ -67,8 +67,8 @@ function Sajde({ isOff = false }: SajdeProps) {
   return (
     <div
       className={tvcn(
-        "flex-1 h-full bg-tusi-500 rounded-sm-elements",
-        isOff ? "opacity-25" : "",
+        "flex-1 h-full bg-primary-bg rounded-sm-elements",
+        isOff ? "bg-muted-bg" : "",
       )}
     />
   )

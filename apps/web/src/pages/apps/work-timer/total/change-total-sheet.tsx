@@ -5,6 +5,7 @@ import { useAppForm } from "#/form"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
+import { buttonVariants } from "#/components/ui/button"
 
 const ChangeTotalSchema = z.object({
   hours: z
@@ -97,9 +98,8 @@ export function ChangeTotalSheet() {
                 iconStarting={<MinusIcon />}
                 title={null}
                 onClick={() => form.handleSubmit({ submitAction: "subtract" })}
-                className={skins.btn({
-                  mode: "contained",
-                  intent: "neutral",
+                className={buttonVariants({
+                  variant: "secondary",
                   className: "flex-1",
                 })}
               />
@@ -108,23 +108,18 @@ export function ChangeTotalSheet() {
                 iconStarting={<PlusIcon />}
                 title={null}
                 onClick={() => form.handleSubmit({ submitAction: "add" })}
-                className={skins.btn({
-                  mode: "contained",
-                  intent: "neutral",
+                className={buttonVariants({
+                  variant: "secondary",
                   className: "flex-1",
                 })}
               />
             </div>
 
             <form.SubmitBtn
-              iconStarting={<PencilSimpleIcon weight="fill" />}
               title="تغییر مجموع کار"
+              iconStarting={<PencilSimpleIcon weight="fill" />}
               onClick={() => form.handleSubmit({ submitAction: "change" })}
-              className={skins.btn({
-                mode: "contained",
-                intent: "brand",
-                className: "flex-1",
-              })}
+              className={buttonVariants({ variant: "primary" })}
             />
           </div>
         </Sheet.Footer>

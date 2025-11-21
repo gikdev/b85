@@ -2,13 +2,9 @@ import {
   HandsPrayingIcon,
   HurricaneIcon,
   type Icon,
-  ListChecksIcon,
-  NumberCircleOneIcon,
-  SquareIcon,
   TextboxIcon,
   TextIndentIcon,
   TimerIcon,
-  TipJarIcon,
 } from "@phosphor-icons/react"
 
 export interface App {
@@ -44,28 +40,28 @@ export const apps: App[] = [
     title: "پرامپتور",
     Icon: TextboxIcon,
   },
-  {
-    id: "todos",
-    title: "کارها",
-    Icon: ListChecksIcon,
-    disabled: true,
-  },
-  {
-    id: "one-thing",
-    title: "یه چیز",
-    Icon: NumberCircleOneIcon,
-    disabled: true,
-  },
-  {
-    id: "budget",
-    title: "بودجه",
-    Icon: TipJarIcon,
-    disabled: true,
-  },
-  {
-    id: "not-found",
-    title: "نام برنامه",
-    Icon: SquareIcon,
-    disabled: true,
-  },
+  // {
+  //   id: "todos",
+  //   title: "کارها",
+  //   Icon: ListChecksIcon,
+  //   disabled: true,
+  // },
+  // {
+  //   id: "one-thing",
+  //   title: "یه چیز",
+  //   Icon: NumberCircleOneIcon,
+  //   disabled: true,
+  // },
+  // {
+  //   id: "budget",
+  //   title: "بودجه",
+  //   Icon: TipJarIcon,
+  //   disabled: true,
+  // },
+  // {
+  //   id: "not-found",
+  //   title: "نام برنامه",
+  //   Icon: SquareIcon,
+  //   disabled: true,
+  // },
 ] as const
