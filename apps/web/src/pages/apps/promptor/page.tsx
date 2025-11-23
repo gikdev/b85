@@ -1,13 +1,14 @@
 /** biome-ignore-all lint/performance/noDynamicNamespaceImportAccess: It is what it is... */
-
-import { TrashIcon } from "@phosphor-icons/react"
-import { useState } from "react"
+import { CopyIcon, TrashIcon } from "@phosphor-icons/react"
+import { useState, type MouseEvent } from "react"
 import { GoHomeBtn } from "#/components/go-home-btn"
 import { TopAppBar } from "#/components/top-app-bar"
 import { Button } from "#/components/ui/button"
 import { useCopyToClipboardMutation } from "#/lib/copy-to-clipboard"
 import { skins } from "#/shared/skins"
 import * as prompts from "./prompts"
+import { DeepSeek } from "#/components/icons/deepseek"
+import { OpenAI } from "#/components/icons/openai"
 
 export const HomePage = () => (
   <div className={skins.page()}>
@@ -73,11 +74,50 @@ function MainSection() {
             copy(result)
           }}
         >
-          ساخت و کپی پرامپت
+          <CopyIcon />
+          <span>ساخت و کپی پرامپت</span>
+        </Button>
+
+        <Button
+          variant="ghost"
+          size="icon-md"
+          onClick={handleOpenUrl(DEEPSEEK_URL, "NEW_PAGE")}
+          onContextMenu={handleOpenUrl(DEEPSEEK_URL, "CURRENT_PAGE")}
+        >
+          <DeepSeek width={24} />
+        </Button>
+
+        <Button
+          variant="ghost"
+          size="icon-md"
+          onClick={handleOpenUrl(CHATGPT_URL, "NEW_PAGE")}
+          onContextMenu={handleOpenUrl(CHATGPT_URL, "CURRENT_PAGE")}
+        >
+          <OpenAI width={24} />
         </Button>
       </div>
     </main>
   )
+}
+
+const DEEPSEEK_URL = "https://chat.deepseek.com/"
+const CHATGPT_URL = "https://chatgpt.com/"
+
+function handleOpenUrl(url: string, mode: "NEW_PAGE" | "CURRENT_PAGE") {
+  const handler = (e: MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+
+    if (mode === "CURRENT_PAGE") {
+      window.location.href = url
+    }
+
+    if (mode === "NEW_PAGE") {
+      window.open(url, "_blank")
+    }
+  }
+
+  return handler
 }
 
 /**
@@ -85,6 +125,7 @@ function MainSection() {
  *
  * ## Behavior
  * - Converts the entire string to lowercase.
+ *
  * - Replaces all underscores (`_`) with spaces.
  * - Capitalizes the first letter of every word.
  *
