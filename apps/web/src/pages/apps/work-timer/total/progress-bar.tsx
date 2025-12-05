@@ -5,7 +5,7 @@ import { useDailyProgress } from "../store"
 
 export function ProgressBar() {
   return (
-    <div className="h-full flex-1 bg-muted-bg relative">
+    <div className="h-full flex-1 bg-secondary-bg relative rounded-sm-elements">
       <ProgressBarCore />
 
       <ProgressBarContent />

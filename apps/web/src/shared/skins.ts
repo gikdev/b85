@@ -149,7 +149,7 @@ const select = tv({
 const input = tv({
   base: `
     py-2 px-4 font-[inherit] rounded-sm-elements
-    bg-muted-bg outline-none border-b-2 min-h-14
+    bg-secondary-bg outline-none border-b-2 min-h-14
     border-transparent focus:border-border
     text-main-fg
     disabled:opacity-50

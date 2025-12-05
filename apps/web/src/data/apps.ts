@@ -2,8 +2,8 @@ import {
   HandsPrayingIcon,
   HurricaneIcon,
   type Icon,
+  NumberCircleOneIcon,
   TextboxIcon,
-  TextIndentIcon,
   TimerIcon,
 } from "@phosphor-icons/react"
 
@@ -31,14 +31,14 @@ export const apps: App[] = [
     Icon: HurricaneIcon,
   },
   {
-    id: "namoratab",
-    title: "نامرتب",
-    Icon: TextIndentIcon,
-  },
-  {
     id: "promptor",
     title: "پرامپتور",
     Icon: TextboxIcon,
+  },
+  {
+    id: "pick-one",
+    Icon: NumberCircleOneIcon,
+    title: "Pick One",
   },
   // {
   //   id: "todos",

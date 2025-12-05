@@ -75,7 +75,7 @@ function MainSection() {
           }}
         >
           <CopyIcon />
-          <span>ساخت و کپی پرامپت</span>
+          <span>کپی پرامپت</span>
         </Button>
 
         <Button

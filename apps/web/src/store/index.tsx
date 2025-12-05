@@ -14,14 +14,14 @@ import {
 import { PersistGate } from "redux-persist/integration/react"
 import storage from "redux-persist/lib/storage"
 import { loggingDevtoolsSlice } from "#/logging/slice"
-import { namoratabSlice } from "#/pages/apps/namoratab/store"
 import { nebulaSlice } from "#/pages/apps/nebula/store"
 import { rakatSlice } from "#/pages/apps/rakat/store"
 import { workTimerSlice } from "#/pages/apps/work-timer/store"
+import { pickOneSlice } from "#/pages/apps/pick-one/store"
 
 const rootReducer = combineReducers({
   apps: combineReducers({
-    namoratab: namoratabSlice.reducer,
+    pickOne: pickOneSlice.reducer,
     nebula: nebulaSlice.reducer,
     rakat: rakatSlice.reducer,
     workTimer: workTimerSlice.reducer,

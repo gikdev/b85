@@ -8,7 +8,7 @@ export function GoalTargetIndicator() {
 
   const styles = tvcn(
     "h-full w-10 flex items-center justify-center rounded-sm-elements",
-    isGoalAchieved ? "bg-primary-bg text-main-fg" : "bg-muted-bg",
+    isGoalAchieved ? "bg-primary-bg text-main-fg" : "bg-secondary-bg",
   )
 
   return (
