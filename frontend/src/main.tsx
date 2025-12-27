@@ -6,6 +6,7 @@ import { GeneralError } from "./pages/common/general-error"
 import { NotFound } from "./pages/common/not-found"
 import { Pending } from "./pages/common/pending"
 import { routeTree } from "./routeTree.gen"
+import { enable } from "@tauri-apps/plugin-autostart"
 
 export const router = createRouter({
   routeTree,
@@ -34,3 +35,9 @@ root.render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
+
+function start() {
+  enable().catch(err => console.error(err))
+}
+
+start()
