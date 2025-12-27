@@ -37,6 +37,11 @@ root.render(
 )
 
 function start() {
+  if (!window) return
+  if (!('__TAURI__' in window)) return
+
+  console.log("Running in Tauri mode...")
+
   enable().catch(err => console.error(err))
 }
 
