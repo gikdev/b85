@@ -15,9 +15,9 @@ import { PersistGate } from "redux-persist/integration/react"
 import storage from "redux-persist/lib/storage"
 import { loggingDevtoolsSlice } from "#/logging/slice"
 import { nebulaSlice } from "#/pages/apps/nebula/store"
+import { pickOneSlice } from "#/pages/apps/pick-one/store"
 import { rakatSlice } from "#/pages/apps/rakat/store"
 import { workTimerSlice } from "#/pages/apps/work-timer/store"
-import { pickOneSlice } from "#/pages/apps/pick-one/store"
 
 const rootReducer = combineReducers({
   apps: combineReducers({

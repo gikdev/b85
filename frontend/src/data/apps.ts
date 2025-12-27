@@ -3,6 +3,7 @@ import {
   HurricaneIcon,
   type Icon,
   NumberCircleOneIcon,
+  PackageIcon,
   TextboxIcon,
   TimerIcon,
 } from "@phosphor-icons/react"
@@ -39,6 +40,11 @@ export const apps: App[] = [
     id: "pick-one",
     Icon: NumberCircleOneIcon,
     title: "Pick One",
+  },
+  {
+    id: "npm-gui",
+    Icon: PackageIcon,
+    title: "NPM GUI",
   },
   // {
   //   id: "todos",

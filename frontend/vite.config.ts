@@ -2,10 +2,10 @@ import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import tsconfigPaths from "vite-tsconfig-paths"
+import { build } from "./.config/vite/build"
 import { vitePwa } from "./.config/vite/pwa"
 import { router } from "./.config/vite/router"
 import { server } from "./.config/vite/server"
-import { build } from "./.config/vite/build"
 
 const plugins = [
   router,

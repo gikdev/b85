@@ -1,10 +1,10 @@
 import { MathOperationsIcon } from "@phosphor-icons/react"
 import { z } from "zod/v4"
 import { Sheet } from "#/components/sheet"
+import { buttonVariants } from "#/components/ui/button"
 import { useAppForm } from "#/form"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
-import { buttonVariants } from "#/components/ui/button"
 
 const { closeDailyGoalSetupSheet, setDailyTimeTarget } = workTimerSlice.actions
 

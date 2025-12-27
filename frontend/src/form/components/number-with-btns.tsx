@@ -1,9 +1,9 @@
 import { MinusIcon, PlusIcon } from "@phosphor-icons/react"
+import { useId } from "react"
+import { Button } from "#/components/ui/button"
 import { skins } from "#/shared/skins"
 import { useFieldContext } from ".."
 import { ErrorMsg } from "./error-msg"
-import { Button } from "#/components/ui/button"
-import { useId } from "react"
 
 interface NumberWithBtnsProps {
   label: string

@@ -1,14 +1,14 @@
 /** biome-ignore-all lint/performance/noDynamicNamespaceImportAccess: It is what it is... */
 import { CopyIcon, TrashIcon } from "@phosphor-icons/react"
-import { useState, type MouseEvent } from "react"
+import { type MouseEvent, useState } from "react"
 import { GoHomeBtn } from "#/components/go-home-btn"
+import { DeepSeek } from "#/components/icons/deepseek"
+import { OpenAI } from "#/components/icons/openai"
 import { TopAppBar } from "#/components/top-app-bar"
 import { Button } from "#/components/ui/button"
 import { useCopyToClipboardMutation } from "#/lib/copy-to-clipboard"
 import { skins } from "#/shared/skins"
 import * as prompts from "./prompts"
-import { DeepSeek } from "#/components/icons/deepseek"
-import { OpenAI } from "#/components/icons/openai"
 
 export const HomePage = () => (
   <div className={skins.page()}>

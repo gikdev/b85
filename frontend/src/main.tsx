@@ -1,12 +1,12 @@
 import "./shared/styles.css"
 import { createRouter, RouterProvider } from "@tanstack/react-router"
+import { enable } from "@tauri-apps/plugin-autostart"
 import { StrictMode } from "react"
 import ReactDOM from "react-dom/client"
 import { GeneralError } from "./pages/common/general-error"
 import { NotFound } from "./pages/common/not-found"
 import { Pending } from "./pages/common/pending"
 import { routeTree } from "./routeTree.gen"
-import { enable } from "@tauri-apps/plugin-autostart"
 
 export const router = createRouter({
   routeTree,
@@ -38,7 +38,7 @@ root.render(
 
 function start() {
   if (!window) return
-  if (!('__TAURI__' in window)) return
+  if (!("__TAURI__" in window)) return
 
   console.log("Running in Tauri mode...")
 

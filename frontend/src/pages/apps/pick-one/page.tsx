@@ -1,10 +1,10 @@
+import { useState } from "react"
 import { GoHomeBtn } from "#/components/go-home-btn"
 import { TopAppBar } from "#/components/top-app-bar"
 import { Button } from "#/components/ui/button"
 import { skins } from "#/shared/skins"
-import { useState } from "react"
-import { pickOneSlice } from "./store"
 import { useAppDispatch } from "#/store"
+import { pickOneSlice } from "./store"
 import { usePickOneState } from "./use-pick-one-state"
 
 export function HomePage() {

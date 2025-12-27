@@ -3,7 +3,7 @@ import type { UserConfig } from "vite"
 export const server: UserConfig["server"] = {
   strictPort: true,
   watch: {
-    ignored: ["**/src-tauri/**"]
+    ignored: ["**/src-tauri/**"],
   },
   proxy: {
     "/api": {

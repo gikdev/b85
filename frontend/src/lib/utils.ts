@@ -4,8 +4,7 @@ import { toast } from "react-toastify"
 import { type CnOptions, cn } from "tailwind-variants"
 import { extractErrorMessage } from "./errors"
 
-export const tvcn = (...classes: CnOptions) =>
-  cn(...classes);
+export const tvcn = (...classes: CnOptions) => cn(...classes)
 
 export function copyContentToClipboard(e: MouseEvent<HTMLElement>) {
   const text = e.currentTarget.textContent?.trim()
