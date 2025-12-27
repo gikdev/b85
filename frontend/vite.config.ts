@@ -5,6 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths"
 import { vitePwa } from "./.config/vite/pwa"
 import { router } from "./.config/vite/router"
 import { server } from "./.config/vite/server"
+import { build } from "./.config/vite/build"
 
 const plugins = [
   router,
@@ -18,6 +19,9 @@ const plugins = [
 ]
 
 export default defineConfig({
+  clearScreen: false,
+  envPrefix: ["VITE_", "TAURI_ENV_*"],
   plugins,
   server,
+  build,
 })
