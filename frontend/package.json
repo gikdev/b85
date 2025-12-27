@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "tauri": "tauri",
     "biome": "biome",
     "vite": "vite",
     "openapi-ts": "openapi-ts",
@@ -40,6 +41,7 @@
     "@biomejs/biome": "2.3.10",
     "@hey-api/openapi-ts": "^0.87.2",
     "@tanstack/router-plugin": "^1.135.2",
+    "@tauri-apps/cli": "^2.9.6",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",

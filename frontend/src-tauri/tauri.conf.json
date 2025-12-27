@@ -1,0 +1,38 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "b85",
+  "version": "0.1.0",
+  "identifier": "ir.bahrami85.b85",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5900",
+    "beforeDevCommand": "task dev",
+    "beforeBuildCommand": "task build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "B85",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "theme": "Dark"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

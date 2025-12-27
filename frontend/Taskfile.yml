@@ -13,9 +13,14 @@ tasks:
     cmds:
       - pnpm install
 
-  dev:
+  dev:web:
+    aliases: [dev]
     cmds:
       - pnpm run vite --port {{.FRONTEND_PORT}}
+
+  dev:tauri:
+    cmds:
+      - pnpm run tauri dev
 
   build:
     deps: [typecheck]
