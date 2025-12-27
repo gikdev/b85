@@ -1,0 +1,22 @@
+# https://taskfile.dev
+version: '3'
+
+vars:
+  FRONTEND_DIR: frontend
+
+dotenv: ['.env']
+
+tasks:
+  list:
+    aliases: [default]
+    cmds:
+      - task --list-all
+
+  fe:dev:
+    internal: true
+    dir: "{{.FRONTEND_DIR}}"
+    cmds:
+      - task dev
+
+  dev:
+    deps: [fe:dev]

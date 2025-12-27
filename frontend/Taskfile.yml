@@ -1,0 +1,33 @@
+# https://taskfile.dev
+version: '3'
+
+tasks:
+  list:
+    aliases: [default]
+    cmds:
+      - task --list-all
+
+  setup:
+    cmds:
+      - pnpm install
+
+  dev:
+    cmds:
+      - pnpm run vite
+
+  build:
+    deps: [typecheck]
+    cmds:
+      - pnpm run vite build
+
+  typecheck:
+    cmds:
+      - pnpm run tsc -b
+
+  check:
+    cmds:
+      - pnpm run biome check --write .
+
+  api:
+    cmds:
+      - pnpm run openapi-ts

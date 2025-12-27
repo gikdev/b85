@@ -4,10 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "vite": "vite",
     "openapi-ts": "openapi-ts",
-    "dev": "vite --host",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "tsc": "tsc"
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "^1.0.27",
