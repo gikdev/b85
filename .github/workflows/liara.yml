@@ -24,13 +24,9 @@ jobs:
         run: task setup
         working-directory: ./frontend
 
-      # Covered by Task.
-      # - name: Build project
-      #   run: task build
-      #   working-directory: ./frontend
-
+      # Building is covered by Task.
       - name: Deploy to Liara
         env:
-          LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+          LIARA_API_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
         run: task deploy:liara
         working-directory: ./frontend/dist

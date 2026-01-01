@@ -35,14 +35,13 @@ tasks:
   deploy:liara:
     deps: [build]
     desc: Deploy frontend to Liara
-    env:
-      LIARA_TOKEN:
-        required: true
+    requires:
+      vars: [LIARA_API_TOKEN]
     cmds:
       - pnpm i -g @liara/cli
       - |
         liara deploy \
-          --api-token="$LIARA_TOKEN" \
+          --api-token="$LIARA_API_TOKEN" \
           --no-app-logs \
           --app="b85" \
           --build-location="iran"
