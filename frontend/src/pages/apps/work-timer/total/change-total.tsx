@@ -1,7 +1,7 @@
 import { PencilSimpleIcon } from "@phosphor-icons/react"
+import { Button } from "#/components/ui/button"
 import { useAppDispatch } from "#/store"
 import { workTimerSlice } from "../store"
-import { Button } from "#/components/ui/button"
 
 const { openChangeTotalSheet } = workTimerSlice.actions
 

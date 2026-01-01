@@ -1,7 +1,7 @@
-import { Button } from "#/components/ui/button"
 import { MinusIcon } from "@phosphor-icons/react"
-import { useAppDispatch } from "#/store"
 import { useKeyPress } from "react-haiku"
+import { Button } from "#/components/ui/button"
+import { useAppDispatch } from "#/store"
 import { workTimerSlice } from "../store"
 
 const { decTotalSeconds } = workTimerSlice.actions

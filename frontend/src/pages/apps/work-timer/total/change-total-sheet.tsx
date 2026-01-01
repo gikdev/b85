@@ -1,11 +1,11 @@
 import { MinusIcon, PencilSimpleIcon, PlusIcon } from "@phosphor-icons/react"
 import { z } from "zod/v4"
 import { Sheet } from "#/components/sheet"
+import { buttonVariants } from "#/components/ui/button"
 import { useAppForm } from "#/form"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
-import { buttonVariants } from "#/components/ui/button"
 
 const ChangeTotalSchema = z.object({
   hours: z

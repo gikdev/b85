@@ -1,6 +1,5 @@
 # CUSTOM:
 generated/
-routeTree.gen.ts
 
 # dependencies
 node_modules/

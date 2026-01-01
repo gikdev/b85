@@ -1,5 +1,5 @@
-import { useAppSelector, type AppState } from "#/store"
 import { createSelector } from "@reduxjs/toolkit"
+import { type AppState, useAppSelector } from "#/store"
 
 type DerivedPickOneState =
   | { status: "EMPTY" }

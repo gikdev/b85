@@ -1,10 +1,10 @@
 import { PencilSimpleIcon } from "@phosphor-icons/react"
 import { useId } from "react"
+import { Button } from "#/components/ui/button"
 import { TimeFormatter } from "#/lib/utils"
 import { skins } from "#/shared/skins"
 import { useAppDispatch, useAppSelector } from "#/store"
 import { workTimerSlice } from "../store"
-import { Button } from "#/components/ui/button"
 
 const inputStyle = skins.input({ className: "flex-1 w-full" })
 
