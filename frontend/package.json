@@ -5,6 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@9.15.9",
   "scripts": {
+    "liara": "liara",
     "biome": "biome",
     "vite": "vite",
     "openapi-ts": "openapi-ts",
@@ -41,6 +42,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
     "@hey-api/openapi-ts": "^0.87.2",
+    "@liara/cli": "^9.4.2",
     "@tanstack/router-plugin": "^1.135.2",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.2",

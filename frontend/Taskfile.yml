@@ -32,17 +32,15 @@ tasks:
     cmds:
       - pnpm run openapi-ts
 
-  deploy:liara:
-    deps: [build]
-    desc: Deploy frontend to Liara
+  ci:deploy:
+    desc: Deploy frontend (to Liara)
     requires:
       vars: [LIARA_API_TOKEN]
     cmds:
-      - pnpm i -g @liara/cli
       - |
-        cd ./dist/
-        liara deploy \
+        cd dist/ ;
+        pnpm run liara deploy \
           --api-token="$LIARA_API_TOKEN" \
           --no-app-logs \
           --app="b85" \
-          --build-location="iran"
+          --build-location="iran" ;
