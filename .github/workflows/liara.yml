@@ -1,0 +1,36 @@
+name: Liara
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v6
+
+      - name: Install Task
+        uses: go-task/setup-task@v1
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: ./frontend/package.json
+
+      - name: Install dependencies
+        run: task setup
+        working-directory: ./frontend
+
+      # Covered by Task.
+      # - name: Build project
+      #   run: task build
+      #   working-directory: ./frontend
+
+      - name: Deploy to Liara
+        env:
+          LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+        run: task deploy:liara
+        working-directory: ./frontend/dist
