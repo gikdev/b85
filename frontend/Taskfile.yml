@@ -40,6 +40,7 @@ tasks:
     cmds:
       - pnpm i -g @liara/cli
       - |
+        cd ./dist/
         liara deploy \
           --api-token="$LIARA_API_TOKEN" \
           --no-app-logs \
