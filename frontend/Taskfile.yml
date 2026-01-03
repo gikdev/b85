@@ -40,6 +40,7 @@ tasks:
       - |
         pnpm run liara deploy \
           --api-token="$LIARA_API_TOKEN" \
+          --path=./dist/
           --no-app-logs \
           --app="b85" \
           --build-location="iran" ;
