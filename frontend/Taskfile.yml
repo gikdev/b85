@@ -38,8 +38,7 @@ tasks:
       vars: [LIARA_API_TOKEN]
     cmds:
       - |
-        cd dist/ ;
-        pnpm run liara deploy \
+        cd dist/ && pnpm run liara deploy \
           --api-token="$LIARA_API_TOKEN" \
           --no-app-logs \
           --app="b85" \
