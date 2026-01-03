@@ -35,12 +35,12 @@ jobs:
         run: pnpm install --frozen-lockfile
         working-directory: ./frontend
 
-      - name: Build the project
-        run: task build
-        working-directory: ./frontend
+      # - name: Build the project
+      #   run: task build
+      #   working-directory: ./frontend
 
-      - name: Deploy
+      - name: Build & deploy
         env:
           LIARA_API_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
-        run: cd ./dist/ && task ci:deploy
+        run: task build && cd ./dist/ && task ci:deploy
         working-directory: ./frontend
