@@ -1,0 +1,46 @@
+name: Deploy to Liara
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+    tags: ['v*']
+    paths-ignore: ['.github/workflows/**', '**/.vscode/**']
+
+jobs:
+  deploy:
+    name: Deploy project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v6
+
+      - name: Install Task
+        uses: go-task/setup-task@v1
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          package_json_file: ./frontend/package.json
+
+      - name: Cache dependencies
+        uses: actions/cache@v5
+        id: deps-cache
+        with:
+          path: ~/.pnpm-store/
+          key: pnpm-store-${{ hashFiles('frontend/pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: ./frontend
+
+      - name: Build the project
+        run: task build
+        working-directory: ./frontend
+
+      - name: Deploy
+        env:
+          LIARA_API_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
+        run: task ci:deploy
+        working-directory: ./frontend

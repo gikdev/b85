@@ -6,7 +6,8 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": true
+    "ignoreUnknown": true,
+    "includes": ["**", "!src/routeTree.gen.ts", "!!node_modules", "!!dist"]
   },
   "formatter": {
     "enabled": true,
@@ -25,6 +26,11 @@
       "quoteStyle": "double",
       "arrowParentheses": "asNeeded",
       "semicolons": "asNeeded"
+    }
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "assist": {

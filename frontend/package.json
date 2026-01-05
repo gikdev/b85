@@ -6,6 +6,7 @@
   "packageManager": "pnpm@9.15.9",
   "scripts": {
     "tauri": "tauri",
+    "liara": "liara",
     "biome": "biome",
     "vite": "vite",
     "openapi-ts": "openapi-ts",
@@ -17,7 +18,7 @@
     "@phosphor-icons/react": "^2.1.10",
     "@reactuses/core": "^6.1.5",
     "@reduxjs/toolkit": "^2.10.1",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.18",
     "@tanstack/devtools-vite": "^0.3.11",
     "@tanstack/react-devtools": "^0.8.1",
     "@tanstack/react-form": "^1.23.8",
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
     "@hey-api/openapi-ts": "^0.87.2",
+    "@liara/cli": "^9.4.2",
     "@tanstack/router-plugin": "^1.135.2",
     "@tauri-apps/cli": "^2.9.6",
     "@types/node": "^24.10.1",
