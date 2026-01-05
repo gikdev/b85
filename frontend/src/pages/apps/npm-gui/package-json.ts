@@ -46,10 +46,48 @@ export interface PackageJson {
   [key: string]: unknown
 }
 
-export interface Person {
+interface Person {
   name?: string
   email?: string
   url?: string
 }
 
-export type Dependencies = Record<string, string>
+type Dependencies = Record<string, string>
+
+type DependencyKind = "normal" | "dev" | "peer" | "optional"
+
+export interface NormalizedDependency {
+  name: string
+  version: string
+  kind: DependencyKind
+}
+
+export function collectDependencies(pkg: PackageJson): NormalizedDependency[] {
+  const sections: Array<[DependencyKind, Dependencies | undefined]> = [
+    ["normal", pkg.dependencies],
+    ["dev", pkg.devDependencies],
+    ["peer", pkg.peerDependencies],
+    ["optional", pkg.optionalDependencies],
+  ]
+
+  return sections.flatMap(([kind, deps]) =>
+    Object.entries(deps ?? {}).map(([name, version]) => ({
+      name,
+      version,
+      kind,
+    })),
+  )
+}
+
+export function sortPackagesByName<T extends { name: string }>(
+  packages: T[],
+): T[] {
+  return [...packages].sort((a, b) => {
+    const normalize = (name: string) =>
+      name.startsWith("@") ? name.slice(1) : name
+
+    return normalize(a.name).localeCompare(normalize(b.name), undefined, {
+      sensitivity: "base",
+    })
+  })
+}
