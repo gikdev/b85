@@ -9,7 +9,14 @@
     "dialog:default",
     {
       "identifier": "shell:allow-execute",
-      "allow": [{ "name": "pnpm", "cmd": "pnpm" }]
+      "allow": [
+        { "name": "pnpm", "cmd": "pnpm" },
+        {
+          "name": "powershell",
+          "cmd": "powershell",
+          "args": ["-NoProfile", "-Command"]
+        }
+      ]
     }
   ]
 }

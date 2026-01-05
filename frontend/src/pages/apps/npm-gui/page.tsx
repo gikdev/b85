@@ -10,6 +10,7 @@ import { toast } from "react-toastify"
 import { GoHomeBtn } from "#/components/go-home-btn"
 import { TopAppBar } from "#/components/top-app-bar"
 import { Button } from "#/components/ui/button"
+import path from "path-browserify"
 import {
   Table,
   TableBody,
@@ -28,8 +29,8 @@ import {
 } from "./package-json"
 
 export function HomePage() {
-  const [_packageFilePath, setPackageFilePath] = useState<string | null>(null)
-  const [_packageConfig, setPackageConfig] = useState<PackageJson | null>(null)
+  const [packageFilePath, setPackageFilePath] = useState<string | null>(null)
+  const [packageConfig, setPackageConfig] = useState<PackageJson | null>(null)
   const [dependencies, setDependencies] = useState<NormalizedDependency[]>([])
 
   const handleSelect = async () => {
@@ -41,7 +42,7 @@ export function HomePage() {
     })
 
     if (!filePath) return
-
+    console.log(filePath)
     setPackageFilePath(filePath)
 
     const content = await readTextFile(filePath)
@@ -54,13 +55,14 @@ export function HomePage() {
   }
 
   const handleRemove = async (depName: string) => {
-    if (!_packageConfig || !_packageFilePath) return
+    if (!packageConfig || !packageFilePath) return
 
     try {
+      const folderPath = path.dirname(packageFilePath)
       const result = await runCommand({
         cmd: "pnpm",
         args: ["remove", depName],
-        cwd: _packageFilePath.substring(0, _packageFilePath.lastIndexOf("/")), // folder containing package.json
+        cwd: folderPath,
       })
 
       if (result.success) {
