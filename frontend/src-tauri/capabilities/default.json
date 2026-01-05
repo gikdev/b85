@@ -3,5 +3,13 @@
   "identifier": "default",
   "description": "enables the default permissions",
   "windows": ["main"],
-  "permissions": ["core:default", "fs:default", "dialog:default"]
+  "permissions": [
+    "core:default",
+    "fs:default",
+    "dialog:default",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [{ "name": "pnpm", "cmd": "pnpm" }]
+    }
+  ]
 }

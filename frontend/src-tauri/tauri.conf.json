@@ -9,6 +9,9 @@
     "beforeDevCommand": "task dev",
     "beforeBuildCommand": "task build"
   },
+  "plugins": {
+    "shell": {}
+  },
   "app": {
     "windows": [
       {

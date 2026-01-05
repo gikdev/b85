@@ -6,6 +6,7 @@ import {
 import { open } from "@tauri-apps/plugin-dialog"
 import { readTextFile } from "@tauri-apps/plugin-fs"
 import { useState } from "react"
+import { toast } from "react-toastify"
 import { GoHomeBtn } from "#/components/go-home-btn"
 import { TopAppBar } from "#/components/top-app-bar"
 import { Button } from "#/components/ui/button"
@@ -18,6 +19,7 @@ import {
   TableRow,
 } from "#/components/ui/table"
 import { skins } from "#/shared/skins"
+import { runCommand } from "./command"
 import {
   collectDependencies,
   type NormalizedDependency,
@@ -49,6 +51,29 @@ export function HomePage() {
     const allDeps = collectDependencies(pkg)
     const sortedDeps = sortPackagesByName(allDeps)
     setDependencies(sortedDeps)
+  }
+
+  const handleRemove = async (depName: string) => {
+    if (!_packageConfig || !_packageFilePath) return
+
+    try {
+      const result = await runCommand({
+        cmd: "pnpm",
+        args: ["remove", depName],
+        cwd: _packageFilePath.substring(0, _packageFilePath.lastIndexOf("/")), // folder containing package.json
+      })
+
+      if (result.success) {
+        setDependencies(prev => prev.filter(d => d.name !== depName))
+        toast.success(`✅ Removed ${depName}`)
+      } else {
+        console.error(result.stderr)
+        toast.error(`❌ Failed to remove ${depName}:\n${result.stderr}`)
+      }
+    } catch (err) {
+      console.error(err)
+      toast.error(`❌ Error removing ${depName}:\n${err}`)
+    }
   }
 
   return (
@@ -103,7 +128,7 @@ export function HomePage() {
                       size="icon-sm"
                       variant="ghost"
                       title="Remove dependency"
-                      disabled
+                      onClick={() => handleRemove(dep.name)}
                     >
                       <TrashIcon size={18} />
                     </Button>
